@@ -1,9 +1,4 @@
-dev = ENV['RACK_ENV'] == 'development'
+# frozen_string_literal: true
 
-require 'rack/unreloader'
-
-Unreloader = Rack::Unreloader.new(subclasses: %w'Roda', reload: dev){App}
-Unreloader.require('app.rb'){'App'}
-run(dev ? Unreloader : App.freeze.app)
-
-run App.app
+require_relative './init'
+run Star::App.freeze.app

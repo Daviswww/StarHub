@@ -1,3 +1,4 @@
+module Star
 class App
   hash_branch 'api' do |r|
     r.on do
@@ -10,4 +11,5 @@ class App
       # post_list.values.map { |post| post }.join(" | ")
     end
   end
+end
 end
